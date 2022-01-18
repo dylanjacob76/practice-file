@@ -6,7 +6,6 @@ const openModalTriggerEl = document.querySelector(".trigger");
 const closeModalTriggerEl = document.querySelector(".close");
 const modalEl = document.querySelector(".modal");
 
-
 function toggleNav() {
     navTriggerEl.addEventListener("click", function () {
         navEl.classList.toggle("open");
@@ -29,7 +28,13 @@ function main() {
     });
     closeModalTriggerEl.addEventListener("click", function() {
         modalEl.classList.remove("open__modal");
+    });
+    window.addEventListener("click", function(e) {
+        if (e.target === modalEl) {
+            modalEl.classList.remove("open");
+        }
     })
+
 }
 
 main();
