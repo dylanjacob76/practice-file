@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pacifico&display=swap');
 
 * {
     box-sizing: border-box;
@@ -165,7 +164,7 @@ body {
     }
 }
 
-.open {
+.open__modal {
     display: block;
 }
 
@@ -184,6 +183,7 @@ body {
     background: transparent;
     border: 0;
     outline: 0;
+    cursor: pointer;
 }
 
 .modal__body {
