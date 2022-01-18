@@ -1,18 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 body {
-    font-size: 3rem;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Lato, sans-serif;
 }
 
-h1 {
-    text-align: center;
+.container {
+    max-width: 960px;
+    margin: 0 auto;
 }
 
-.todo {
+.nav {
+    transition: 0.3s all ease;
+    position: absolute;
+    width: 260px;
+    /* left: -260px; */
+    height:100%;
+    background-color: #27292f;
+    z-index: 9999;
+}
+
+.open {
+    left: 0px
+}
+
+.menu {
     list-style-type: none;
 }
 
-.todo__item {
-    border: 1px solid #ddd;
-    padding: 1rem;
+.menu__item {
+    font-size: 1.4rem;
+    color: #eee;
+    border-bottom: 1px solid #333;
+    padding: 1.2rem;
+    text-transform: uppercase;
+    transition: 0.3s all ease;
 }
+
+.menu__item:hover {
+    background-color: #111;
+    cursor: pointer;
+}
+
+.hamburger {
+    position: absolute;
+    top: 10px;
+    right: -50px;
+}
+
+.hamburger:hover {
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    background-color: #222;
+    margin: 6px 0;
+    height: 6px;
+    width: 36px;
+    border-radius: 2px;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* transform hamburger bar into an "x" */
+.change.first-bar {
+    top: 11px;
+    transform: rotate(-45deg);
+}
+
+.change.second-bar {
+    opacity: 0;
+}
+
+.change.third-bar {
+    bottom:13px;
+    transform: rotate(-45deg);
+}
+
+/* main content */
+
+.content {
+    padding: 2rem;
+}
+
+
 
