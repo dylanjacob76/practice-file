@@ -4,7 +4,7 @@ const contentEl = document.querySelector(".content");
 const hamburgerBarsEl = document.querySelectorAll("span");
 
 function toggleNav() {
-    navTriggerEl.addEventListener("click", function() {
+    navTriggerEl.addEventListener("click", function () {
         navEl.classList.toggle("open");
         contentEl.classList.toggle("shift");
         animateHamburgers();
