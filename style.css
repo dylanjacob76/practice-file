@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -9,6 +9,10 @@
 body {
     font-family: Lato, sans-serif;
     background-color: #fff;
+}
+
+.content__image {
+    border-radius: 3.5rem;
 }
 
 .container {
@@ -69,7 +73,6 @@ body {
     transition: 0.3s;
 }
 
-/* transform hamburger bar into an "x" */
 .change.first-bar {
     top: 11px;
     transform: rotate(-45deg);
@@ -81,10 +84,8 @@ body {
 
 .change.third-bar {
     bottom:13px;
-    transform: rotate(-45deg);
+    transform: rotate(45deg);
 }
-
-/* main content */
 
 .content {
     padding: 2rem;
