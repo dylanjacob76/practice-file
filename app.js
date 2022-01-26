@@ -1,40 +1,39 @@
-const navTriggerEl = document.querySelector(".hamburger");
-const navEl = document.querySelector("nav");
-const contentEl = document.querySelector(".content");
-const hamburgerBarsEl = document.querySelectorAll("span");
-const openModalTriggerEl = document.querySelector(".trigger");
-const closeModalTriggerEl = document.querySelector(".close");
-const modalEl = document.querySelector(".modal");
+// let a = "alpha";
+// let b = "beta";
+// let c = "charlie"
 
-function toggleNav() {
-    navTriggerEl.addEventListener("click", function () {
-        navEl.classList.toggle("open");
-        contentEl.classList.toggle("shift");
-        animateHamburgers();
-    })
+// let human = {
+//     a, 
+//     b,
+//     c,
+//     d: "hard coded value",
+//     talk () {
+//         console.log("i'm talking")
+//     },
+//     walk () {
+//         console.log("i'm walking now...")
+//     }
+// }
+
+// console.log(human);
+// human.walk();
+
+
+function displayInfo() {
+        const nameEl = document.querySelector("#name");
+        const emailEl = document.querySelector("#email");
+        const buttonEl = document.querySelector("button");
+
+        buttonEl.addEventListener("click", function() {
+            let name = nameEl.value;
+            let email = emailEl.value;
+            let result = {
+                name,
+                email
+            }
+            console.log(result)
+        })
 }
 
-function animateHamburgers() {
-    for (let item of hamburgerBarsEl) {
-        item.classList.toggle("change");
-    }
-}
+displayInfo();
 
-toggleNav();
-
-function main() {
-    openModalTriggerEl.addEventListener("click", function() {
-        modalEl.classList.add("open__modal");
-    });
-    closeModalTriggerEl.addEventListener("click", function() {
-        modalEl.classList.remove("open__modal");
-    });
-    window.addEventListener("click", function(e) {
-        if (e.target === modalEl) {
-            modalEl.classList.remove("open");
-        }
-    })
-
-}
-
-main();
