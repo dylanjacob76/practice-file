@@ -1,60 +1,22 @@
-// let a = "alpha";
-// let b = "beta";
-// let c = "charlie"
-
-// let human = {
-//     a, 
-//     b,
-//     c,
-//     d: "hard coded value",
-//     talk () {
-//         console.log("i'm talking")
-//     },
-//     walk () {
-//         console.log("i'm walking now...")
-//     }
-// }
-
-// console.log(human);
-// human.walk();
-
-
-// function displayInfo() {
-//         const nameEl = document.querySelector("#name");
-//         const emailEl = document.querySelector("#email");
-//         const buttonEl = document.querySelector("button");
-
-//         buttonEl.addEventListener("click", function() {
-//             let name = nameEl.value;
-//             let email = emailEl.value;
-//             let result = {
-//                 name,
-//                 email
-//             }
-//             console.log(result)
-//         })
-// }
-
-// displayInfo();
-
-function display(name, age, profession) {
-    console.log(`My name is ${name}. I am ${age} years old. I work as a ${profession}.`)
+// this is a constrcutor function
+// you cannot have a return inside of a constructor function
+function Car(brand, model) {
+    this.brand = brand;
+    this.model = model;
 }
 
-function createLongHTML() {
-    // let html = "<div>";
-    // html += "<p> hi this is paragraph </p>"
-    // html += "<h1> this is heading </h1>"
-    // html += "<div>"
+// Car.prototype.stats = function() {
+//     return `${this.brand} ${this.model}`;
+// }
 
-    let html = `
-        <div>
-            <p> hi this is a paragraph </p>
-            <h1> this is some heading </h1>
-        </div>
-    `
-    document.querySelector("body").innerHTML = html;
-
+Car.prototype.drive = function() {
+    return `I'm driving a ${this.brand} ${this.model} vrooooom`;
 }
 
-createLongHTML();
+let car1 = new Car("lambo", "aventador");
+let car2 = new Car ("toyota", "camry");
+let car3 = new Car ("dodge", "charger");
+
+console.log(car1.drive());
+console.log(car2.drive());
+console.log(car3.drive());
