@@ -10,17 +10,25 @@ Person.prototype.greet = function() {
 
 // Programmer Constructor
 function Programmer(name, age, language) {
-    // this.name = name;
-    // this.age = age;
     Person.call(this, name, age);
     this.language = language;
 }
 
 Programmer.prototype = Object.create(Person.prototype);
+Programmer.prototype.constructor = Programmer;
 
-const a = new Programmer("John", 22, "Java");
-const b = new Programmer("Naruto", 32, "Python")
-console.log(b.greet())
+// how to override methods
+Programmer.prototype.greet = function() {
+    return `${Person.prototype.greet.call(this)} I code in ${this.language}.`
+}
+
+const a = new Programmer("Naruto", 32, "Java");
+console.log(a.greet())
+
+
+
+
+
 
 // Fighter Constructor
 function Fighter(name, age, art) {
@@ -35,3 +43,9 @@ Fighter.prototype.constructor = Fighter;
 const johnny = new Fighter("Johnny", 56, "Eagle Fang")
 console.log(johnny.greet());
 console.log(johnny.constructor);
+
+Fighter.prototype.greet = function() {
+    return `${Person.prototype.greet.call(this)}. And I fight in ${this.art}!!!`
+}
+
+console.log(johnny.greet())
